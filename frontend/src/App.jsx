@@ -4,22 +4,24 @@ import { Routes,Route } from 'react-router-dom'
 
 
 import About from './pages/About'
-import Order from './pages/order'
+
 import Login from './pages/login'
 
-import PlaceOrder from './pages/placeOrder'
+
 import Navbar from './components/Navbar'
 import Cart from './pages/Cart'
 import Product from './pages/Product'
 import Home from './pages/home'
 import Footer from './components/Footer'
 
-import { Contact } from './pages/contact'
+import  Contact from './pages/contact'
 import Collection from './pages/collection'
 import SearchBar from './components/SearchBar'
 
  import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css'
+import PlaceOrder from './pages/placeOrder'
+import Orders from './pages/Orders'
 
 
 
@@ -41,10 +43,10 @@ const App = () => {
      <Route path='/about' element={<About/>}/>
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/product/:productId' element={<Product/>}/>
-      <Route path='/order' element={<Order/>}/>
+      <Route path='/orders' element={<Orders/>}/>
        <Route path='/login' element={<Login/>}/>
         <Route path='/contact' element={<Contact/>}/>
-         <Route path='/placeorder' element={<PlaceOrder/>}/>
+         <Route path='/place-order' element={<PlaceOrder/>}/>
      <Route path='/home' element={<Home/>}/>
 <Route path ='/' element={<Home/>}/>
 

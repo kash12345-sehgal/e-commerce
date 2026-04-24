@@ -22,6 +22,7 @@ import SearchBar from './components/SearchBar'
   import 'react-toastify/dist/ReactToastify.css'
 import PlaceOrder from './pages/placeOrder'
 import Orders from './pages/Orders'
+import AddProduct from './pages/AddProduct'
 
 
 
@@ -49,6 +50,7 @@ const App = () => {
          <Route path='/place-order' element={<PlaceOrder/>}/>
      <Route path='/home' element={<Home/>}/>
 <Route path ='/' element={<Home/>}/>
+    <Route path='/add-product' element={<AddProduct/>}/>
 
 
 

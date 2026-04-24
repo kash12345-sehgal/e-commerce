@@ -8,4 +8,4 @@ productRouter.post('/remove',adminAuth,removeProduct)
 productRouter.post('/single',singleProduct)
 productRouter.get('/list',listProducts)
 
-export default  productRouter
+export default productRouter

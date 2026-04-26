@@ -1,5 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-effect */
  
-/* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
@@ -11,11 +11,11 @@ const BestSeller = () => {
     const [ bestseller,setBestSeller] = useState([]);
  
     useEffect(()=>{
-    const bestProduct= products.filter((item)=>(item.bestseller));
-     
-    
-    setBestSeller (bestProduct.slice(0,5))
-    },[])
+    if (products && products.length > 0) {
+        const bestProduct= products.filter((item)=>(item.bestseller));
+        setBestSeller (bestProduct.slice(0,5))
+    }
+    },[products])
   return (
     <div className='my-10'>
         <div className='text-center text-3xl py-8'>

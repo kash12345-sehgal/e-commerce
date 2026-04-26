@@ -13,9 +13,10 @@ const LatestCollection = () => {
   const [LatestProducts,setLatestProducts]=useState([]);
 
 useEffect(()=>{
-   
-  setLatestProducts(products.slice(0,10));
-
+    if (products && products.length > 0) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setLatestProducts(products.slice(0,10));
+    }
 },[products])
   return (
     <div className="my-10">

@@ -1,3 +1,4 @@
+import orderModel from "../models/orderModel.js";
 import OrderModel from "../models/orderModel.js";
 import userModel from "../models/userModels.js";
 import Razorpay from "razorpay";
@@ -50,43 +51,6 @@ if(success === 'true'){
 
 }
 
-    }catch (error) {
-        console.log(error);
-        res.json({ success: false, message: error.message })
-
-    }
-}
-//  placing order using razorpay
-const placeOrderRazorpay = async (req, res) => {
-    try{
-        const { userId, items,amount,address   } = req.body; 
-        
-        const orderData = {
-            userId,
-            items,
-            status: "OrderPlaced",
-            amount,
-            address,
-            paymentMethod: "Razorpay",
-            paymentStatus: false,
-            date: Date.now()
-        }
-const newOrder = new orderModel(orderData);
-        await newOrder.save();
-        const options = {
-    amount: amount * 100,
-    currency: currency.toUpperCase(),
-    receipt: newOrder._id.toString()
-        }
-await razorpayInstance.orders.create(options, (error, order) => {
-
-            if(error){
-                console.log(error);
-                res.json({ success: false, message: error.message })
-
-            }
-            res.json({ success: true, order })
-    })
     }catch (error) {
         console.log(error);
         res.json({ success: false, message: error.message })
@@ -150,6 +114,68 @@ const newOrder = new OrderModel(orderData);
 
 }
 
+//  placing order using razorpay
+const placeOrderRazorpay = async (req, res) => {
+    try{
+        const { userId, items,amount,address   } = req.body; 
+        
+        const orderData = {
+            userId,
+            items,
+            status: "OrderPlaced",
+            amount,
+            address,
+            paymentMethod: "Razorpay",
+            paymentStatus: false,
+            date: Date.now()
+        }
+const newOrder = new OrderModel(orderData);
+        await newOrder.save();
+        const options = {
+    amount: amount * 100,
+    currency: currency.toUpperCase(),
+    receipt: newOrder._id.toString()
+        }
+await razorpayInstance.orders.create(options, (error, order) => {
+
+            if(error){
+                console.log(error);
+                res.json({ success: false, message: error.message })
+
+            }
+            res.json({ success: true, order })
+    })
+    }catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message })
+
+    }
+}
+
+const verifyRazorpay = async(req,res) => {
+ try{
+const{userId,razorpay_order_id} = req.body
+const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id)
+if(orderInfo.status==='paid'){
+    await orderModel.findByIdAndUpdate(orderInfo.receipt,{payment:true})
+    await userModel.findByIdAndUpdate(userId,{cartData:{}})
+    res.json({success:true,message:"Payment Successful"})
+
+}else{
+    res.json({success:false,message:'Payment Failed'})
+}
+ 
+}catch(error){
+    console.log(error);
+        res.json({ success: false, message: error.message })
+
+}
+
+}
+
+
+
+
 // all order data from admin panel
 const allOrders = async (req, res) => {
     try {
@@ -184,4 +210,4 @@ try{
     res.json({ success: false, message: error.message })
 }
 }
-export { verifyStripe, placeOrder, placeOrderRazorpay, placeOrderStripe, allOrders, userOrders, updateStatus }
+export { verifyRazorpay,verifyStripe, placeOrder, placeOrderRazorpay, placeOrderStripe, allOrders, userOrders, updateStatus }

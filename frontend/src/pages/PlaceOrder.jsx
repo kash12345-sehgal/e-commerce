@@ -42,6 +42,16 @@ const PlaceOrder = () => {
       receipt:order.receipt,
       handler: async(response)=>{
         console.log(response)
+      try{
+const {data} =await axios.post(backendUrl + '/api/order/verifyRazorpay',response,{headers:{token}})
+if (data.success){
+  navigate('/orders')
+  setCartItems({})
+}
+      } catch(error){
+console.log(error)
+toast.error(error)
+      }
 
       }
 
@@ -107,6 +117,7 @@ if(responseStripe.data.success){
           const responseRazorpay = await axios.post(backendUrl+'/api/order/razorpay',orderData,{headers: { token}})
           if(responseRazorpay.data.success){
             initPay(responseRazorpay.data.order);
+            console.log(import.meta.env.VITE_RAZORPAY_KEY_ID)
             }
 
 

@@ -10,7 +10,7 @@ const Footer = () => {
    <div>
     <img src ={assets.logo} className='mb-5 w-32' alt=""/>
     <p className='w-full md:w-2/3 text-gray-600'>
-    welcome to kashish sehgal website hope you like it i am feeling so good to see you guys loving my website very very much thanks to mayank pratap singh
+    ✨ Where every style feels premium 💖 and every look tells a story 🌸 — KASHIQUE.
     </p>
     </div>
     <div>
@@ -26,10 +26,10 @@ const Footer = () => {
         <p className='text-xl font-medium mb-5'>GET IN Touch </p>
         <ul className='flex flex-col gap-1 text-gray-600'>
         <li>
-       91- 9812746604 
+       91- 98127466066
         </li>
         <li>
-            contact@foreeveryou.com
+            contact@kashique.com
 
         </li>
         </ul>
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
         <div>
         <hr/>
-        <p className='py-5 text-sm text-center  '>Copyright 2024@ foreever.com - All Right Reserved</p>
+        <p className='py-5 text-sm text-center  '>Copyright 2024@ kashique.com - All Right Reserved</p>
     </div>
  
 </div>

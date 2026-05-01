@@ -23,7 +23,8 @@ useEffect(()=>{
       <div className="text-center py-8 text-3xl ">
         <Title text1={'LATEST'} text2={'COLLECTION'}/>
       <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati officia repudiandae ipsam eos rerum, esse architecto dolores vel qui excepturi soluta vitae adipisci incidunt. Ex similique dignissimos deserunt ipsa harum!
+💫 Explore our newest collection designed with premium quality, timeless elegance, and modern trends to elevate your everyday style effortlessly 💕
+Each piece is made to enhance your beauty, boost your confidence, and give you that perfect standout look wherever you go ✨
       </p>
       </div>
 {/* Renderin products */}

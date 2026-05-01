@@ -10,7 +10,7 @@ event.preventDefault();
     <div className='text-center mt-20 '>
         <p className='text-2xl font- medium text-gray-800'> Subscribe know and get 20% off</p>
         <p className='text-gray-400 mt-3'>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat at id, illum aliquid maiores aut.
+            ✨ Where every style feels premium 💖 and every look tells a story 🌸 — KASHIQUE.
         </p>
         <form onSubmit={onSubmitHandler} className='w-full sm:w-1/2 flex items-center gap-4 mx-auto my-6 border pl-3'> 
             <input className='w-full sm:flex-1 outline-none' type="email"  placeholder="Enter your mail" required/>

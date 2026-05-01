@@ -21,7 +21,9 @@ const BestSeller = () => {
         <div className='text-center text-3xl py-8'>
 <Title text1={'BEST'} text2={'SELLERS'} />
 <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quisquam nemo veniam dicta dignissimos saepe esse harum est eum distinctio, reiciendis alias molestiae sit quod id eaque, quis voluptates at?
+✨ Welcome to KASHIQUE ✨
+Where style meets elegance 💖
+Subscribe now & explore our beautiful collection — hope you love our products 🌸
 </p>
     </div>
     <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg-grid-cols-5 gap-4 gap-y-6'>

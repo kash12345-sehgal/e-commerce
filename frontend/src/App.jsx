@@ -14,13 +14,13 @@ import Product from './pages/Product'
 import Home from './pages/Home'
 import Footer from './components/Footer'
 
-import  Contact from './pages/contact'
-import Collection from './pages/collection'
+import Contact from './pages/Contact'
+import Collection from './pages/Collection'
 import SearchBar from './components/SearchBar'
 import Verify from './pages/Verify'
  import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css'
-import PlaceOrder from './pages/placeOrder'
+import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
 import AddProduct from './pages/AddProduct'
 

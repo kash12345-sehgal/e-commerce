@@ -39,7 +39,7 @@ const About = () => {
         </div>
       </div>
 
-      <NewsletterBox />
+      <NewsLetterBox />
     </div>
   )
 }
